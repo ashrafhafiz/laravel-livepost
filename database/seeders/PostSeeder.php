@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Comment;
+use App\Models\Post;
+use App\Models\User;
+use Database\Factories\Helpers\FactoryHelper;
 use Database\Seeders\Traits\SeedersSupportTrait;
 use Illuminate\Database\Seeder;
 
@@ -20,7 +24,15 @@ class PostSeeder extends Seeder
         // \App\Models\Post::factory(10)->state([
         //     'title' => 'Untitled',
         // ])->create();
-        \App\Models\Post::factory(10)->untitled()->create();
+        $posts = \App\Models\Post::factory(10)
+            // ->has(Comment::factory(3), 'comments')
+            ->untitled()
+            ->create();
+
+        $posts->each(function (Post $post){
+            $post->users()->sync([FactoryHelper::getRandomId(User::class)]);
+        });
+
         $this->enableForeignKeyChecks();
     }
 }

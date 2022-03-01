@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Post;
 use Database\Seeders\Traits\SeedersSupportTrait;
 use Illuminate\Database\Seeder;
 
@@ -17,7 +18,9 @@ class CommentSeeder extends Seeder
     {
         $this->disableForeignKeyChecks();
         $this->truncate('comments');
-        \App\Models\Comment::factory(10)->create();
+        \App\Models\Comment::factory(10)
+            // ->for(Post::factory(1), 'post')
+            ->create();
         $this->enableForeignKeyChecks();
     }
 }
