@@ -7,6 +7,15 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
+
+// Laravel's ORM - Eloquent provides an easy API for us to work with database. 
+// We use the query() method to start a database query, 
+// get() to retrieve records, 
+// find() to find by id 
+// create() to insert record, 
+// update()to update and 
+// delete() to delete. 
 
 class PostController extends Controller
 {
@@ -31,12 +40,18 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        $post = Post::query()->create([
-            'title' => $request->title,
-            'body' => $request->body,
-        ]);
+        $created = DB::transaction(function () use ($request) {
+
+            $created = Post::query()->create([
+                'title' => $request->title,
+                'body' => $request->body,
+            ]);
+            $created->users()->sync($request->user_ids);
+            return $created;
+        });
+
         return new JsonResponse([
-            'Data' => $post
+            'Data' => $created
         ]);
     }
 
@@ -67,9 +82,9 @@ class PostController extends Controller
         $updated = $post->update([
             'title' => $request->title ?? $post->title,
             'body' => $request->body ?? $post->body,
-            ]);
+        ]);
 
-        if (! $updated) {
+        if (!$updated) {
             return new JsonResponse([
                 'Errors' => ['Failed to  update model.']
             ], 400);
@@ -88,8 +103,14 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        $deleted = $post->forceDelete();
+        if (!deleted) {
+            return new JsonResponse([
+                'Errors' => ['Failed to delete post.']
+            ], 400);
+        }
         return new JsonResponse([
-            'Data' => 'Delete Request'
+            'Data' => 'Post deleted successfully.'
         ]);
     }
 }

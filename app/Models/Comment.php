@@ -10,18 +10,28 @@ class Comment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'body'
+        'body',
+        'user_id',
+        'post_id',
     ];
+
+    protected $guarded = [];
+
+    protected $hidden = [];
+
+    protected $appends = [];
 
     protected $casts = [
         'body' => 'array'
     ];
 
-    public function post() {
+    public function post()
+    {
         return $this->belongsTo(Post::class, 'post_id');
     }
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class, 'user_id');
     }
 }
