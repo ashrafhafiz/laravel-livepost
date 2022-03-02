@@ -26,7 +26,7 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreUserRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(StoreUserRequest $request)
     {
@@ -39,7 +39,7 @@ class UserController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(User $user)
     {
@@ -53,7 +53,7 @@ class UserController extends Controller
      *
      * @param  \App\Http\Requests\UpdateUserRequest  $request
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(UpdateUserRequest $request, User $user)
     {
@@ -66,7 +66,7 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy(User $user)
     {

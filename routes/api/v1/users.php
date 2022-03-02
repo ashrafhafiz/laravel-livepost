@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\UserController;
-use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\Route;
+
+// use GuzzleHttp\Middleware;
 
 // Route::get('/users', function (Request $request) {
 //     return new JsonResponse([
