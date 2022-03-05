@@ -9,12 +9,12 @@ class Post extends Model
 {
     use HasFactory;
 
-    // Laravel protects the model fields from mass assignment by default. 
-    // To enable mass assignment, we will need to define the $fillable property 
-    // in the model. 
+    // Laravel protects the model fields from mass assignment by default.
+    // To enable mass assignment, we will need to define the $fillable property
+    // in the model.
 
-    // $hidden will hide model fields when we convert the model into an array, and 
-    // $append will add extra fields to the array. 
+    // $hidden will hide model fields when we convert the model into an array, and
+    // $append will add extra fields to the array.
 
     protected $fillable = [
         'title',

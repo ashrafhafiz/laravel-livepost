@@ -13,7 +13,7 @@ class Handler extends ExceptionHandler
      * @var array<int, class-string<Throwable>>
      */
     protected $dontReport = [
-        //
+        // GeneralJsonException::class
     ];
 
     /**
@@ -34,8 +34,14 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
-            //
+        $this->reportable(function (GeneralJsonException $e) {
+            // The default report actions.
+            // Will be overwritten by the report method inside GeneralJsonException
+        });
+
+        $this->renderable(function (GeneralJsonException $e) {
+            // The default render actions.
+            // Will be overwritten by the render method inside GeneralJsonException
         });
     }
 }

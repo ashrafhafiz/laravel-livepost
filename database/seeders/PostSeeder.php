@@ -24,12 +24,12 @@ class PostSeeder extends Seeder
         // \App\Models\Post::factory(10)->state([
         //     'title' => 'Untitled',
         // ])->create();
-        $posts = \App\Models\Post::factory(10)
+        $posts = \App\Models\Post::factory(100)
             // ->has(Comment::factory(3), 'comments')
             ->untitled()
             ->create();
 
-        $posts->each(function (Post $post){
+        $posts->each(function (Post $post) {
             $post->users()->sync([FactoryHelper::getRandomId(User::class)]);
         });
 

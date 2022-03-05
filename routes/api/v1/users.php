@@ -62,13 +62,16 @@ Route::group([
     'as' => 'users.',
     // 'namespace' => '\App\Http\Controllers',
 ], function () {
-    Route::get('/users', [UserController::class, 'index'])->name('index')
-        ->withoutMiddleware('auth');
-    Route::get('/users/{user}', [UserController::class, 'show'])->name('show')
-        ->withoutMiddleware('auth')
+    Route::get('/users', [UserController::class, 'index'])
+        ->name('index')->withoutMiddleware('auth');
+    Route::get('/users/{user}', [UserController::class, 'show'])
+        ->name('show')->withoutMiddleware('auth')
         // ->where('user', '[0-9]+');
         ->whereNumber('user');
-    Route::post('/users', [UserController::class, 'store'])->name('store');
-    Route::patch('/users/{user}', [UserController::class, 'update'])->name('update');
-    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('destroy');
+    Route::post('/users', [UserController::class, 'store'])
+        ->name('store')->withoutMiddleware('auth');
+    Route::patch('/users/{user}', [UserController::class, 'update'])
+        ->name('update')->withoutMiddleware('auth');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])
+        ->name('destroy')->withoutMiddleware('auth');
 });
