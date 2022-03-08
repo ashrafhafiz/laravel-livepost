@@ -15,7 +15,7 @@ class PostCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    protected $post;
+    public $post;
 
     /**
      * Create a new event instance.

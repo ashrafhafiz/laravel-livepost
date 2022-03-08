@@ -39,6 +39,11 @@ class PostRepository extends BaseRepository
         });
     }
 
+    /**
+     * @param Post $post
+     * @param array $attributes
+     * @return mixed
+     */
     public function update($post, array $attributes)
     {
         return DB::transaction(function () use ($post, $attributes) {
@@ -64,6 +69,10 @@ class PostRepository extends BaseRepository
         });
     }
 
+    /**
+     * @param Post $post
+     * @return mixed
+     */
     public function forceDelete($post)
     {
         return DB::transaction(function () use($post) {

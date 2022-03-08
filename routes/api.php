@@ -27,3 +27,18 @@ Route::prefix('v1')->group(function () {
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+
+//if (\Illuminate\Support\Facades\App::environment('local')) {
+//    Route::get('/playground', function (){
+//        return (new \App\Mail\WelcomeEmail(\App\Models\User::factory()->make()))->render();
+//    });
+//}
+
+if (\Illuminate\Support\Facades\App::environment('local')) {
+    Route::get('/playground', function (){
+        $user = \App\Models\User::factory()->make();
+        \Illuminate\Support\Facades\Mail::to($user)
+            ->send(new \App\Mail\WelcomeEmail($user));
+        return null;
+    });
+}
