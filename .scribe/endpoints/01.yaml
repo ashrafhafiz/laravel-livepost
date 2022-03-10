@@ -1,0 +1,163 @@
+name: 'Post Management'
+description: 'APIs to manage posts.'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/posts
+    metadata:
+      title: 'Display a listing of the users.'
+      description: 'Gets a list of the users'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters:
+      pageSize:
+        name: pageSize
+        description: 'Size per page. Default to 20.'
+        required: false
+        example: 20
+        type: integer
+        custom: []
+      page:
+        name: page
+        description: 'Page to view.'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":124,"title":"ipsa","body":[],"created_at":"2022-03-10T02:19:26.000000Z","updated_at":"2022-03-10T02:19:26.000000Z"},{"id":125,"title":"error","body":[],"created_at":"2022-03-10T02:19:26.000000Z","updated_at":"2022-03-10T02:19:26.000000Z"}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/posts/{id}'
+    metadata:
+      title: 'Display the specified post.'
+      description: 'Display a specific post.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'User ID.'
+        required: true
+        example: 7
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":126,"title":"suscipit","body":[],"created_at":"2022-03-10T02:19:26.000000Z","updated_at":"2022-03-10T02:19:26.000000Z"},{"id":127,"title":"omnis","body":[],"created_at":"2022-03-10T02:19:26.000000Z","updated_at":"2022-03-10T02:19:26.000000Z"}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/posts
+    metadata:
+      title: 'Store a newly created post in storage.'
+      description: 'Store the created post in the posts table'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: true
+        example: beatae
+        type: string
+        custom: []
+      body:
+        name: body
+        description: ''
+        required: true
+        example: voluptatibus
+        type: string
+        custom: []
+      user_ids:
+        name: user_ids
+        description: ''
+        required: true
+        example:
+          - qui
+        type: 'string[]'
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/posts/{id}'
+    metadata:
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the post.'
+        required: true
+        example: 3
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/posts/{id}'
+    metadata:
+      title: 'Remove the specified post from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the post.'
+        required: true
+        example: 3
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "data" : "Post deleted successfully."
+          }
+        headers: []
+        description: '200'
+    responseFields: []

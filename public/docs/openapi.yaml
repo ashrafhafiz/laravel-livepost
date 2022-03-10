@@ -1,0 +1,872 @@
+openapi: 3.0.3
+info:
+  title: Livepost
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://127.0.0.1:8000'
+paths:
+  /api/v1/comments:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  Data:
+                    -
+                      id: 1
+                      body: []
+                      user_id: 10
+                      post_id: 52
+                      created_at: '2022-03-09T17:54:16.000000Z'
+                      updated_at: '2022-03-09T17:54:16.000000Z'
+                    -
+                      id: 2
+                      body: []
+                      user_id: 5
+                      post_id: 73
+                      created_at: '2022-03-09T17:54:16.000000Z'
+                      updated_at: '2022-03-09T17:54:16.000000Z'
+                    -
+                      id: 4
+                      body: []
+                      user_id: 6
+                      post_id: 12
+                      created_at: '2022-03-09T17:54:16.000000Z'
+                      updated_at: '2022-03-09T17:54:16.000000Z'
+                    -
+                      id: 5
+                      body: []
+                      user_id: 8
+                      post_id: 4
+                      created_at: '2022-03-09T17:54:16.000000Z'
+                      updated_at: '2022-03-09T17:54:16.000000Z'
+                    -
+                      id: 6
+                      body: []
+                      user_id: 8
+                      post_id: 31
+                      created_at: '2022-03-09T17:54:16.000000Z'
+                      updated_at: '2022-03-09T17:54:16.000000Z'
+                    -
+                      id: 7
+                      body: []
+                      user_id: 3
+                      post_id: 49
+                      created_at: '2022-03-09T17:54:16.000000Z'
+                      updated_at: '2022-03-09T17:54:16.000000Z'
+                    -
+                      id: 8
+                      body: []
+                      user_id: 7
+                      post_id: 37
+                      created_at: '2022-03-09T17:54:16.000000Z'
+                      updated_at: '2022-03-09T17:54:16.000000Z'
+                    -
+                      id: 9
+                      body: []
+                      user_id: 9
+                      post_id: 52
+                      created_at: '2022-03-09T17:54:16.000000Z'
+                      updated_at: '2022-03-09T17:54:16.000000Z'
+                    -
+                      id: 10
+                      body: []
+                      user_id: 10
+                      post_id: 87
+                      created_at: '2022-03-09T17:54:16.000000Z'
+                      updated_at: '2022-03-09T17:54:16.000000Z'
+                properties:
+                  Data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        body: []
+                        user_id: 10
+                        post_id: 52
+                        created_at: '2022-03-09T17:54:16.000000Z'
+                        updated_at: '2022-03-09T17:54:16.000000Z'
+                      -
+                        id: 2
+                        body: []
+                        user_id: 5
+                        post_id: 73
+                        created_at: '2022-03-09T17:54:16.000000Z'
+                        updated_at: '2022-03-09T17:54:16.000000Z'
+                      -
+                        id: 4
+                        body: []
+                        user_id: 6
+                        post_id: 12
+                        created_at: '2022-03-09T17:54:16.000000Z'
+                        updated_at: '2022-03-09T17:54:16.000000Z'
+                      -
+                        id: 5
+                        body: []
+                        user_id: 8
+                        post_id: 4
+                        created_at: '2022-03-09T17:54:16.000000Z'
+                        updated_at: '2022-03-09T17:54:16.000000Z'
+                      -
+                        id: 6
+                        body: []
+                        user_id: 8
+                        post_id: 31
+                        created_at: '2022-03-09T17:54:16.000000Z'
+                        updated_at: '2022-03-09T17:54:16.000000Z'
+                      -
+                        id: 7
+                        body: []
+                        user_id: 3
+                        post_id: 49
+                        created_at: '2022-03-09T17:54:16.000000Z'
+                        updated_at: '2022-03-09T17:54:16.000000Z'
+                      -
+                        id: 8
+                        body: []
+                        user_id: 7
+                        post_id: 37
+                        created_at: '2022-03-09T17:54:16.000000Z'
+                        updated_at: '2022-03-09T17:54:16.000000Z'
+                      -
+                        id: 9
+                        body: []
+                        user_id: 9
+                        post_id: 52
+                        created_at: '2022-03-09T17:54:16.000000Z'
+                        updated_at: '2022-03-09T17:54:16.000000Z'
+                      -
+                        id: 10
+                        body: []
+                        user_id: 10
+                        post_id: 87
+                        created_at: '2022-03-09T17:54:16.000000Z'
+                        updated_at: '2022-03-09T17:54:16.000000Z'
+                    items:
+                      type: object
+      tags:
+        - 'Comment Management'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Comment Management'
+      security: []
+  '/api/v1/comments/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  Data:
+                    id: 1
+                    body: []
+                    user_id: 10
+                    post_id: 52
+                    created_at: '2022-03-09T17:54:16.000000Z'
+                    updated_at: '2022-03-09T17:54:16.000000Z'
+                properties:
+                  Data:
+                    type: object
+                    example:
+                      id: 1
+                      body: []
+                      user_id: 10
+                      post_id: 52
+                      created_at: '2022-03-09T17:54:16.000000Z'
+                      updated_at: '2022-03-09T17:54:16.000000Z'
+      tags:
+        - 'Comment Management'
+      security: []
+    patch:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Comment Management'
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Comment Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the comment.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/posts:
+    get:
+      summary: 'Display a listing of the users.'
+      description: 'Gets a list of the users'
+      parameters:
+        -
+          in: query
+          name: pageSize
+          description: 'Size per page. Default to 20.'
+          example: 20
+          required: false
+          schema:
+            type: integer
+            description: 'Size per page. Default to 20.'
+            example: 20
+        -
+          in: query
+          name: page
+          description: 'Page to view.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page to view.'
+            example: 1
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 124
+                      title: ipsa
+                      body: []
+                      created_at: '2022-03-10T02:19:26.000000Z'
+                      updated_at: '2022-03-10T02:19:26.000000Z'
+                    -
+                      id: 125
+                      title: error
+                      body: []
+                      created_at: '2022-03-10T02:19:26.000000Z'
+                      updated_at: '2022-03-10T02:19:26.000000Z'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 124
+                        title: ipsa
+                        body: []
+                        created_at: '2022-03-10T02:19:26.000000Z'
+                        updated_at: '2022-03-10T02:19:26.000000Z'
+                      -
+                        id: 125
+                        title: error
+                        body: []
+                        created_at: '2022-03-10T02:19:26.000000Z'
+                        updated_at: '2022-03-10T02:19:26.000000Z'
+                    items:
+                      type: object
+      tags:
+        - 'Post Management'
+      security: []
+    post:
+      summary: 'Store a newly created post in storage.'
+      description: 'Store the created post in the posts table'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Post Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: beatae
+                body:
+                  type: string
+                  description: ''
+                  example: voluptatibus
+                user_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - qui
+                  items:
+                    type: string
+              required:
+                - title
+                - body
+                - user_ids
+      security: []
+  '/api/v1/posts/{id}':
+    get:
+      summary: 'Display the specified post.'
+      description: 'Display a specific post.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 126
+                      title: suscipit
+                      body: []
+                      created_at: '2022-03-10T02:19:26.000000Z'
+                      updated_at: '2022-03-10T02:19:26.000000Z'
+                    -
+                      id: 127
+                      title: omnis
+                      body: []
+                      created_at: '2022-03-10T02:19:26.000000Z'
+                      updated_at: '2022-03-10T02:19:26.000000Z'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 126
+                        title: suscipit
+                        body: []
+                        created_at: '2022-03-10T02:19:26.000000Z'
+                        updated_at: '2022-03-10T02:19:26.000000Z'
+                      -
+                        id: 127
+                        title: omnis
+                        body: []
+                        created_at: '2022-03-10T02:19:26.000000Z'
+                        updated_at: '2022-03-10T02:19:26.000000Z'
+                    items:
+                      type: object
+      tags:
+        - 'Post Management'
+      security: []
+    patch:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Post Management'
+      security: []
+    delete:
+      summary: 'Remove the specified post from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data: 'Post deleted successfully.'
+                properties:
+                  data:
+                    type: string
+                    example: 'Post deleted successfully.'
+      tags:
+        - 'Post Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'User ID.'
+        example: 7
+        required: true
+        schema:
+          type: integer
+  /api/v1/users:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  Data:
+                    -
+                      id: 1
+                      name: 'Melissa Hamill MD'
+                      email: vreichert@example.net
+                      email_verified_at: '2022-03-09T17:54:13.000000Z'
+                      created_at: '2022-03-09T17:54:13.000000Z'
+                      updated_at: '2022-03-09T17:54:13.000000Z'
+                    -
+                      id: 2
+                      name: 'Mr. Brook Mraz'
+                      email: tyshawn50@example.com
+                      email_verified_at: '2022-03-09T17:54:13.000000Z'
+                      created_at: '2022-03-09T17:54:13.000000Z'
+                      updated_at: '2022-03-09T17:54:13.000000Z'
+                    -
+                      id: 3
+                      name: 'Josiah Wilkinson'
+                      email: reinger.jude@example.com
+                      email_verified_at: '2022-03-09T17:54:13.000000Z'
+                      created_at: '2022-03-09T17:54:13.000000Z'
+                      updated_at: '2022-03-09T17:54:13.000000Z'
+                    -
+                      id: 4
+                      name: 'Name White'
+                      email: rgibson@example.com
+                      email_verified_at: '2022-03-09T17:54:13.000000Z'
+                      created_at: '2022-03-09T17:54:13.000000Z'
+                      updated_at: '2022-03-09T17:54:13.000000Z'
+                    -
+                      id: 5
+                      name: 'Prof. Jane Altenwerth V'
+                      email: chase33@example.org
+                      email_verified_at: '2022-03-09T17:54:13.000000Z'
+                      created_at: '2022-03-09T17:54:13.000000Z'
+                      updated_at: '2022-03-09T17:54:13.000000Z'
+                    -
+                      id: 6
+                      name: 'Anais Grant'
+                      email: chegmann@example.org
+                      email_verified_at: '2022-03-09T17:54:13.000000Z'
+                      created_at: '2022-03-09T17:54:13.000000Z'
+                      updated_at: '2022-03-09T17:54:13.000000Z'
+                    -
+                      id: 7
+                      name: 'Dr. Jett Hauck'
+                      email: stone29@example.net
+                      email_verified_at: '2022-03-09T17:54:13.000000Z'
+                      created_at: '2022-03-09T17:54:13.000000Z'
+                      updated_at: '2022-03-09T17:54:13.000000Z'
+                    -
+                      id: 8
+                      name: 'Payton Stamm V'
+                      email: zackary.hegmann@example.com
+                      email_verified_at: '2022-03-09T17:54:13.000000Z'
+                      created_at: '2022-03-09T17:54:13.000000Z'
+                      updated_at: '2022-03-09T17:54:13.000000Z'
+                    -
+                      id: 9
+                      name: 'Ena Jacobson'
+                      email: istroman@example.org
+                      email_verified_at: '2022-03-09T17:54:13.000000Z'
+                      created_at: '2022-03-09T17:54:13.000000Z'
+                      updated_at: '2022-03-09T17:54:13.000000Z'
+                    -
+                      id: 10
+                      name: 'Anahi Wisoky'
+                      email: glover.andreane@example.com
+                      email_verified_at: '2022-03-09T17:54:13.000000Z'
+                      created_at: '2022-03-09T17:54:13.000000Z'
+                      updated_at: '2022-03-09T17:54:13.000000Z'
+                    -
+                      id: 11
+                      name: 'Mrs. Loraine Gottlieb'
+                      email: caden.klein@example.net
+                      email_verified_at: '2022-03-09T17:54:17.000000Z'
+                      created_at: '2022-03-09T17:54:17.000000Z'
+                      updated_at: '2022-03-09T17:54:17.000000Z'
+                properties:
+                  Data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Melissa Hamill MD'
+                        email: vreichert@example.net
+                        email_verified_at: '2022-03-09T17:54:13.000000Z'
+                        created_at: '2022-03-09T17:54:13.000000Z'
+                        updated_at: '2022-03-09T17:54:13.000000Z'
+                      -
+                        id: 2
+                        name: 'Mr. Brook Mraz'
+                        email: tyshawn50@example.com
+                        email_verified_at: '2022-03-09T17:54:13.000000Z'
+                        created_at: '2022-03-09T17:54:13.000000Z'
+                        updated_at: '2022-03-09T17:54:13.000000Z'
+                      -
+                        id: 3
+                        name: 'Josiah Wilkinson'
+                        email: reinger.jude@example.com
+                        email_verified_at: '2022-03-09T17:54:13.000000Z'
+                        created_at: '2022-03-09T17:54:13.000000Z'
+                        updated_at: '2022-03-09T17:54:13.000000Z'
+                      -
+                        id: 4
+                        name: 'Name White'
+                        email: rgibson@example.com
+                        email_verified_at: '2022-03-09T17:54:13.000000Z'
+                        created_at: '2022-03-09T17:54:13.000000Z'
+                        updated_at: '2022-03-09T17:54:13.000000Z'
+                      -
+                        id: 5
+                        name: 'Prof. Jane Altenwerth V'
+                        email: chase33@example.org
+                        email_verified_at: '2022-03-09T17:54:13.000000Z'
+                        created_at: '2022-03-09T17:54:13.000000Z'
+                        updated_at: '2022-03-09T17:54:13.000000Z'
+                      -
+                        id: 6
+                        name: 'Anais Grant'
+                        email: chegmann@example.org
+                        email_verified_at: '2022-03-09T17:54:13.000000Z'
+                        created_at: '2022-03-09T17:54:13.000000Z'
+                        updated_at: '2022-03-09T17:54:13.000000Z'
+                      -
+                        id: 7
+                        name: 'Dr. Jett Hauck'
+                        email: stone29@example.net
+                        email_verified_at: '2022-03-09T17:54:13.000000Z'
+                        created_at: '2022-03-09T17:54:13.000000Z'
+                        updated_at: '2022-03-09T17:54:13.000000Z'
+                      -
+                        id: 8
+                        name: 'Payton Stamm V'
+                        email: zackary.hegmann@example.com
+                        email_verified_at: '2022-03-09T17:54:13.000000Z'
+                        created_at: '2022-03-09T17:54:13.000000Z'
+                        updated_at: '2022-03-09T17:54:13.000000Z'
+                      -
+                        id: 9
+                        name: 'Ena Jacobson'
+                        email: istroman@example.org
+                        email_verified_at: '2022-03-09T17:54:13.000000Z'
+                        created_at: '2022-03-09T17:54:13.000000Z'
+                        updated_at: '2022-03-09T17:54:13.000000Z'
+                      -
+                        id: 10
+                        name: 'Anahi Wisoky'
+                        email: glover.andreane@example.com
+                        email_verified_at: '2022-03-09T17:54:13.000000Z'
+                        created_at: '2022-03-09T17:54:13.000000Z'
+                        updated_at: '2022-03-09T17:54:13.000000Z'
+                      -
+                        id: 11
+                        name: 'Mrs. Loraine Gottlieb'
+                        email: caden.klein@example.net
+                        email_verified_at: '2022-03-09T17:54:17.000000Z'
+                        created_at: '2022-03-09T17:54:17.000000Z'
+                        updated_at: '2022-03-09T17:54:17.000000Z'
+                    items:
+                      type: object
+      tags:
+        - 'User Management'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User Management'
+      security: []
+  '/api/v1/users/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  Data:
+                    id: 1
+                    name: 'Melissa Hamill MD'
+                    email: vreichert@example.net
+                    email_verified_at: '2022-03-09T17:54:13.000000Z'
+                    created_at: '2022-03-09T17:54:13.000000Z'
+                    updated_at: '2022-03-09T17:54:13.000000Z'
+                properties:
+                  Data:
+                    type: object
+                    example:
+                      id: 1
+                      name: 'Melissa Hamill MD'
+                      email: vreichert@example.net
+                      email_verified_at: '2022-03-09T17:54:13.000000Z'
+                      created_at: '2022-03-09T17:54:13.000000Z'
+                      updated_at: '2022-03-09T17:54:13.000000Z'
+      tags:
+        - 'User Management'
+      security: []
+    patch:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User Management'
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: 'Comment Management'
+    description: 'APIs to manage comments'
+  -
+    name: 'Post Management'
+    description: 'APIs to manage posts.'
+  -
+    name: 'User Management'
+    description: 'APIs to manage users'

@@ -10,6 +10,12 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
+/**
+ * Class UserController
+ * @package App\Http\Controllers
+ * @group User Management
+ * APIs to manage users
+ */
 class UserController extends Controller
 {
     /**

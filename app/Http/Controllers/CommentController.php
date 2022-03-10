@@ -8,6 +8,12 @@ use App\Http\Requests\UpdateCommentRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
+/**
+ * Class CommentController
+ * @package App\Http\Controllers
+ * @group Comment Management
+ * APIs to manage comments
+ */
 class CommentController extends Controller
 {
     /**

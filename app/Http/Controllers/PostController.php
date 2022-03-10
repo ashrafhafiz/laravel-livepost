@@ -21,10 +21,22 @@ use Illuminate\Support\Facades\DB;
 // update()to update and
 // delete() to delete.
 
+/**
+ * Class PostController
+ * @package App\Http\Controllers
+ * @group Post Management
+ * APIs to manage posts.
+ */
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the users.
+     * Gets a list of the users
+     * @queryParam pageSize int Size per page. Default to 20. Example: 20
+     * @queryParam page int Page to view. Example: 1
+     *
+     * @apiResourceCollection App\Http\Resources\PostResource
+     * @apiResourceModel App\Models\Post
      *
      * @return ResourceCollection
      * @throws GeneralJsonException
@@ -50,7 +62,8 @@ class PostController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created post in storage.
+     * Store the created post in the posts table
      *
      * @param \App\Http\Requests\StorePostRequest $request
      * @param PostRepository $repository
@@ -84,7 +97,13 @@ class PostController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified post.
+     * Display a specific post.
+     *
+     * @urlParam id int required User ID.
+     *
+     * @apiResourceCollection App\Http\Resources\PostResource
+     * @apiResourceModel App\Models\Post
      *
      * @param \App\Models\Post $post
      * @return PostResource | JsonResponse
@@ -134,8 +153,12 @@ class PostController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified post from storage.
      *
+     * @response 200 {
+     *  "data" : "Post deleted successfully."
+     * }
+     * 
      * @param \App\Models\Post $post
      * @return \Illuminate\Http\JsonResponse
      */
